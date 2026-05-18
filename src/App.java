@@ -23,10 +23,10 @@ public class App {
             entrada.nextLine();
             switch (opcao) {
                 case 1:
-                    gerenciN.registrarNavio(entrada);
+                    gerenciN.registrarEntradNavio(entrada);
                     break;
                 case 2:
-                    // Lógica para registrar saída de navio
+                    gerenciN.registrarSaidaNavio(entrada);
                     break;
                 case 3:
                     // Lógica para registrar entrada de container
