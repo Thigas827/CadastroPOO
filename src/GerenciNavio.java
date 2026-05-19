@@ -5,12 +5,13 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+
 public class GerenciNavio {
 
     // Lista de navios registrados
     private List<Navio> lista = new ArrayList<>();
 
-    //Metodo para regisrtrar a entrada do navio
+    // Metodo para regisrtrar a entrada do navio
     public void registrarEntradNavio(Scanner entrada) {
         System.out.println("Nome do navio: ");
         String n = entrada.nextLine();
@@ -46,7 +47,6 @@ public class GerenciNavio {
                 break;
         }
 
-
         // Formatadores para leitura do input de DATA e HORA
         DateTimeFormatter formatoDataEntrada = DateTimeFormatter.ofPattern("ddMMyyyy");
         DateTimeFormatter formatoHoraEntrada = DateTimeFormatter.ofPattern("HHmm");
@@ -67,9 +67,7 @@ public class GerenciNavio {
         System.out.println("Navio registrado! ");
     }
 
-
-
-    //Metodo para registrar a saida do navio
+    // Metodo para registrar a saida do navio
     public void registrarSaidaNavio(Scanner entrada) {
         if (lista.isEmpty()) {
             System.out.println("\nNenhum navio registrado.");
@@ -95,6 +93,7 @@ public class GerenciNavio {
         }
     }
 
+    // Metodo para listar os navios
     public void listarNavios() {
         if (lista.isEmpty()) {
             System.out.println("\nNenhum navio registrado.");
@@ -103,7 +102,8 @@ public class GerenciNavio {
         System.out.println("\n=== Navios registrados no porto ===");
         for (int i = 0; i < lista.size(); i++) {
             Navio navioAtual = lista.get(i);
-            System.out.println(i + " = " + navioAtual.getNomeNavio());
+            System.out.println("Navio " + i + ":");
+            System.out.println(navioAtual);
         }
     }
 }

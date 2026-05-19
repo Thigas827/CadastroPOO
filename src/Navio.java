@@ -59,4 +59,15 @@ public class Navio {
         this.quantContain = quantContain;
     }
 
+    @Override
+    public String toString() {
+        return """
+                Nome: %s
+                Tipo de carga: %s
+                Data de entrada: %s
+                Hora de entrada: %s
+                Quantidade de Containers: %d
+                ================================""".formatted(nomeNavio, tipoNavio, dataEntrada, horaEntrada,
+                quantContain);
+    }
 }
