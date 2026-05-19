@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class App {
+public class Menu {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         GerenciNavio gerenciN = new GerenciNavio();
@@ -35,7 +35,7 @@ public class App {
                     // Lógica para registrar saída de container
                     break;
                 case 5:
-                    // Lógica para listar navios no porto
+                    gerenciN.listarNavios();
                     break;
                 case 6:
                     // Lógica para listar containers no porto

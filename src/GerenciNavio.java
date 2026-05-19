@@ -5,12 +5,12 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-
 public class GerenciNavio {
 
     // Lista de navios registrados
     private List<Navio> lista = new ArrayList<>();
 
+    //Metodo para regisrtrar a entrada do navio
     public void registrarEntradNavio(Scanner entrada) {
         System.out.println("Nome do navio: ");
         String n = entrada.nextLine();
@@ -45,32 +45,31 @@ public class GerenciNavio {
                 tipoCarga = "Indefinido";
                 break;
         }
+
+
         // Formatadores para leitura do input de DATA e HORA
         DateTimeFormatter formatoDataEntrada = DateTimeFormatter.ofPattern("ddMMyyyy");
         DateTimeFormatter formatoHoraEntrada = DateTimeFormatter.ofPattern("HHmm");
-
         // Leitura da DATA
         System.out.print("Digite a data de entrada (ddmmaaaa - APENAS NUMEROS): ");
         String stringData = entrada.nextLine();
         // Conversão dos numeros para formato de data correto
         LocalDate dataEntrada = LocalDate.parse(stringData, formatoDataEntrada);
-
         // Leitura da HORA
         System.out.print("Digite a hora de entrada (hhmm - APENAS NUMEROS): ");
         String stringHora = entrada.nextLine();
         // Conversão dos numeros para formato de hora real
         LocalTime horaEntrada = LocalTime.parse(stringHora, formatoHoraEntrada);
-
         System.out.println("Digite a quantidade de containers: ");
         int q = entrada.nextInt();
-
         Navio novoNavio = new Navio(n, tipoCarga, dataEntrada, horaEntrada, q);
-
         lista.add(novoNavio);
-
         System.out.println("Navio registrado! ");
     }
 
+
+
+    //Metodo para registrar a saida do navio
     public void registrarSaidaNavio(Scanner entrada) {
         if (lista.isEmpty()) {
             System.out.println("\nNenhum navio registrado.");
@@ -93,6 +92,18 @@ public class GerenciNavio {
             System.out.println("Navio removido e saida registrada com sucesso!");
         } else {
             System.out.println("numero inválido! Retornando ao menu.");
+        }
+    }
+
+    public void listarNavios() {
+        if (lista.isEmpty()) {
+            System.out.println("\nNenhum navio registrado.");
+            return;
+        }
+        System.out.println("\n=== Navios registrados no porto ===");
+        for (int i = 0; i < lista.size(); i++) {
+            Navio navioAtual = lista.get(i);
+            System.out.println(i + " = " + navioAtual.getNomeNavio());
         }
     }
 }
