@@ -106,4 +106,13 @@ public class GerenciNavio {
             System.out.println(navioAtual);
         }
     }
+
+    public List<Navio> getListaNavios() {
+        return lista;
+    }
+
+    public void registrarEntradContainer(Scanner entrada) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'registrarEntradContainer'");
+    }
 }

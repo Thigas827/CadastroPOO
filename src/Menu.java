@@ -4,6 +4,7 @@ public class Menu {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         GerenciNavio gerenciN = new GerenciNavio();
+        GerenciContainer gerenciC = new GerenciContainer();
         int opcao = 0;
 
         do {
@@ -29,7 +30,7 @@ public class Menu {
                     gerenciN.registrarSaidaNavio(entrada);
                     break;
                 case 3:
-                    // Lógica para registrar entrada de container
+                    gerenciC.registrarEntradContainer(entrada, gerenciN);
                     break;
                 case 4:
                     // Lógica para registrar saída de container
