@@ -9,8 +9,7 @@ public class GerenciContainer {
 
     // Lista de container
     private List<Container> lista = new ArrayList<>();
-    
-    
+
     // Metodo para regisrtrar a entrada do Container
     public void registrarEntradContainer(Scanner entrada, GerenciNavio gerenciN) {
 
@@ -104,8 +103,8 @@ public class GerenciContainer {
         }
         System.out.println("\n=== Containers disponiveis para retirada: ");
 
-        //Loop para percorrer a lista
-        for (int i  = 0; i < lista.size(); i++) {
+        // Loop para percorrer a lista
+        for (int i = 0; i < lista.size(); i++) {
             Container containerAtual = lista.get(i);
             System.out.println(i + " = " + containerAtual.getId());
         }
@@ -120,5 +119,24 @@ public class GerenciContainer {
         } else {
             System.out.println("Numero Inválido! Retornando ao menu. ");
         }
+    }
+
+    public void listarContainers() {
+        if (lista.isEmpty()) {
+            System.out.println("\nNenhum container registrado no momento."); // Ajustado
+            return;
+        }
+
+        System.out.println("\n=== Containers registrados no porto ==="); // Ajustado
+
+        for (int i = 0; i < lista.size(); i++) {
+            Container containerAtual = lista.get(i);
+            System.out.println("\nContainer " + i + ":"); // Ajustado
+            System.out.println(containerAtual);
+        }
+    }
+
+    public List<Container> getListaContainers() {
+        return lista;
     }
 }
