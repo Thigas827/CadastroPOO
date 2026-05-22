@@ -9,7 +9,9 @@ public class GerenciContainer {
 
     // Lista de container
     private List<Container> lista = new ArrayList<>();
-
+    
+    
+    // Metodo para regisrtrar a entrada do Container
     public void registrarEntradContainer(Scanner entrada, GerenciNavio gerenciN) {
 
         System.out.println("Digite o codigo de indentificação do Container: ");
@@ -46,9 +48,11 @@ public class GerenciContainer {
                 break;
         }
 
+        // Formatadores para leitura do input de DATA e HORA
         DateTimeFormatter formatoDataEntrada = DateTimeFormatter.ofPattern("ddMMyyyy");
         DateTimeFormatter formatoHoraEntrada = DateTimeFormatter.ofPattern("HHmm");
 
+        // Leitura da DATA
         System.out.print("Digite a data de entrada (ddmmaaaa - APENAS NUMEROS): ");
         String stringData = entrada.nextLine();
 
@@ -87,14 +91,34 @@ public class GerenciContainer {
             return;
         }
 
-        // 4. Pescamos o navio escolhido da lista
         Navio navioEscolhido = listaDeNaviosDisponiveis.get(indiceNavioOrigem);
-
-        // 5. AGORA SIM! Criamos o container passando todas as 6 informações (incluindo
-        // o navio!)
         Container novoContainer = new Container(i, tipoCont, dataEntrada, horaEntrada, d, navioEscolhido);
-
         lista.add(novoContainer);
         System.out.println("Container registrado com sucesso!");
+    }
+
+    public void registrarSaidaContainer(Scanner entrada, GerenciNavio gerenciN) {
+        if (lista.isEmpty()) {
+            System.out.println("\nNenhum container foi registrado. ");
+            return;
+        }
+        System.out.println("\n=== Containers disponiveis para retirada: ");
+
+        //Loop para percorrer a lista
+        for (int i  = 0; i < lista.size(); i++) {
+            Container containerAtual = lista.get(i);
+            System.out.println(i + " = " + containerAtual.getId());
+        }
+        System.out.println("\nDigite o NUMERO do container que irá sair: ");
+        int indiceSaida = entrada.nextInt();
+        entrada.nextLine();
+
+        if (indiceSaida >= 0 && indiceSaida < lista.size()) {
+            lista.remove(indiceSaida);
+
+            System.out.println("Container removido e saida registrada");
+        } else {
+            System.out.println("Numero Inválido! Retornando ao menu. ");
+        }
     }
 }
