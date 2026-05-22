@@ -33,13 +33,13 @@ public class Menu {
                     gerenciC.registrarEntradContainer(entrada, gerenciN);
                     break;
                 case 4:
-                    // Lógica para registrar saída de container
+                    gerenciC.registrarSaidaContainer(entrada, gerenciN);
                     break;
                 case 5:
                     gerenciN.listarNavios();
                     break;
                 case 6:
-                    // Lógica para listar containers no porto
+                    gerenciC.listarContainers();
                     break;
                 case 7:
                     System.out.println("Saindo do programa...");
