@@ -53,29 +53,10 @@ public class GerenciNavio {
                 break;
         }
 
-        // Formatadores para leitura do input de DATA e HORA
-        DateTimeFormatter formatoDataEntrada = DateTimeFormatter.ofPattern("ddMMyyyy");
-        DateTimeFormatter formatoHoraEntrada = DateTimeFormatter.ofPattern("HHmm");
+        // Metodo para hora e data (Util)
+        LocalDate dataEntrada = Util.lerDataValida(entrada, "Digite a data de entrada (ddmmaaaa - 8 NUMEROS): ");
+        LocalTime horaEntrada = Util.lerHoraValida(entrada, "Digite a hora de entrada (hhmm - 4 NUMEROS): ");
 
-        // Leitura da DATA
-        System.out.print("Digite a data de entrada (ddmmaaaa - APENAS NUMEROS): ");
-        String stringData = entrada.nextLine();
-
-        // Conversão dos numeros para formato de data correto
-        LocalDate dataEntrada = LocalDate.parse(stringData, formatoDataEntrada);
-
-        // Leitura da HORA
-        System.out.print("Digite a hora de entrada (hhmm - APENAS NUMEROS): ");
-        String stringHora = entrada.nextLine();
-
-        // Conversão dos numeros para formato de hora real
-        LocalTime horaEntrada = LocalTime.parse(stringHora, formatoHoraEntrada);
-        System.out.println("Digite a quantidade de containers: ");
-        int q = entrada.nextInt();
-
-        Navio novoNavio = new Navio(n, tipoCarga, dataEntrada, horaEntrada, q);
-        lista.add(novoNavio);
-        System.out.println("Navio registrado! ");
     }
 
     // Metodo para registrar a saida do navio
