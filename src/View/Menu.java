@@ -1,4 +1,10 @@
+package View;
+
 import java.util.Scanner;
+
+import Control.GerenciContainer;
+import Control.GerenciNavio;
+import Utils.Util;
 
 public class Menu {
     public static void main(String[] args) {
@@ -24,22 +30,35 @@ public class Menu {
             entrada.nextLine();
             switch (opcao) {
                 case 1:
+                    Util.limpaTimer(50);
                     gerenciN.registrarEntradNavio(entrada);
+                    Util.limpaTimer(1000);
                     break;
                 case 2:
+                    Util.limpaTimer(50);
                     gerenciN.registrarSaidaNavio(entrada);
+                    Util.limpaTimer(1000);
+
                     break;
                 case 3:
+                    Util.limpaTimer(50);
                     gerenciC.registrarEntradContainer(entrada, gerenciN);
+                    Util.limpaTimer(1000);
                     break;
                 case 4:
+                    Util.limpaTimer(50);
                     gerenciC.registrarSaidaContainer(entrada, gerenciN);
+                    Util.limpaTimer(1000);
                     break;
                 case 5:
+                    Util.limpaTimer(50);
                     gerenciN.listarNavios();
+                    Util.limpaTimer(1000);
                     break;
                 case 6:
+                    Util.limpaTimer(50);
                     gerenciC.listarContainers();
+                    Util.limpaTimer(1000);
                     break;
                 case 7:
                     System.out.println("Saindo do programa...");
