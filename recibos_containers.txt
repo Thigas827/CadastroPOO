@@ -1,0 +1,11 @@
+=== REGISTRO ===
+Identificação: 123
+Tipo de container: Graneleiro Dry
+Data de entrada: 2026-04-12
+Hora de entrada: 12:12
+Destino: brasil
+Navio de origem: thiago
+-------------------------------
+
+================
+

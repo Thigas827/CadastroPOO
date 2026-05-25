@@ -7,3 +7,12 @@ Quantidade de Containers: 14
 ================================
 ================
 
+=== REGISTRO ===
+Nome: thiago
+Tipo de carga: Granel sólido
+Data de entrada: 2025-05-12
+Hora de entrada: 12:12
+Quantidade de Containers: 15
+================================
+================
+
