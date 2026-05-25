@@ -59,4 +59,15 @@ public class Util {
             }
         }
     }
+
+    public static void gerarRecibo(String conteudo, String nomeArquivo) {
+        try (FileWriter arquivo = new FileWriter(nomeArquivo, true);
+                PrintWriter gravador = new PrintWriter(arquivo)) {
+            gravador.println("=== REGISTRO ===");
+            gravador.println(conteudo);
+            gravador.println("================\n");
+        } catch (IOException e) {
+            System.out.println("Erro critico: Não foi possivel salvar o arquivo " + nomeArquivo);
+        }
+    }
 }

@@ -87,6 +87,10 @@ public class GerenciContainer {
         Container novoContainer = new Container(i, tipoCont, dataEntrada, horaEntrada, d, navioEscolhido);
         lista.add(novoContainer);
         System.out.println("Container registrado com sucesso!");
+
+        Util.gerarRecibo(novoContainer.toString(), "recibos_containers.txt");
+
+        Util.limpaTimer(500);
     }
 
     public void registrarSaidaContainer(Scanner entrada, GerenciNavio gerenciN) {

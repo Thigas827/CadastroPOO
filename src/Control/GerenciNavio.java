@@ -57,6 +57,19 @@ public class GerenciNavio {
         LocalDate dataEntrada = Util.lerDataValida(entrada, "Digite a data de entrada (ddmmaaaa - 8 NUMEROS): ");
         LocalTime horaEntrada = Util.lerHoraValida(entrada, "Digite a hora de entrada (hhmm - 4 NUMEROS): ");
 
+        System.out.println("Digite a quantidade de containers: ");
+        int quantContain = entrada.nextInt();
+        entrada.nextLine(); // Limpar o buffer do teclado
+
+        Navio novoNavio = new Navio(n, tipoCarga, dataEntrada, horaEntrada, quantContain);
+
+        lista.add(novoNavio);
+        System.out.println("Navio registrado com sucesso!");
+
+        // Salva a ficha completa no HD
+        Util.gerarRecibo(novoNavio.toString(), "recibos_navios.txt");
+
+        Util.limpaTimer(500);
     }
 
     // Metodo para registrar a saida do navio

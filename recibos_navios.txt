@@ -1,0 +1,9 @@
+=== REGISTRO ===
+Nome: t
+Tipo de carga: Granel sólido
+Data de entrada: 2025-10-01
+Hora de entrada: 12:12
+Quantidade de Containers: 14
+================================
+================
+
