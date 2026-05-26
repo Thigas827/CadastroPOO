@@ -77,30 +77,9 @@ public class GerenciNavio {
         Util.limpaTimer(500);
     }
 
-    // Metodo para registrar a saida do navio
     public void registrarSaidaNavio(Scanner entrada) {
-        if (lista.isEmpty()) {
-            System.out.println("\nNenhum navio registrado.");
-            return;
-        }
-        System.out.println("\n=== Navios disponiveis para saída ===");
-
-        // Loop para percorrer a lista
-        for (int i = 0; i < lista.size(); i++) {
-            Navio navioAtual = lista.get(i);
-            System.out.println(i + " = " + navioAtual.getNomeNavio());
-        }
-        System.out.print("\nDigite o NUMERO do navio que irá sair: ");
-        int indiceSaida = entrada.nextInt();
-        entrada.nextLine();
-
-        if (indiceSaida >= 0 && indiceSaida < lista.size()) {
-            lista.remove(indiceSaida);
-
-            System.out.println("Navio removido e saida registrada com sucesso!");
-        } else {
-            System.out.println("numero inválido! Retornando ao menu.");
-        }
+        Util.registrarSaidaGenerica(lista, entrada, "Navio");
+        Util.limpaTimer(1000); // Pausa e limpa
     }
 
     // Metodo para listar os navios

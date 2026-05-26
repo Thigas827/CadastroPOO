@@ -99,28 +99,8 @@ public class GerenciContainer {
     }
 
     public void registrarSaidaContainer(Scanner entrada, GerenciNavio gerenciN) {
-        if (lista.isEmpty()) {
-            System.out.println("\nNenhum container foi registrado. ");
-            return;
-        }
-        System.out.println("\n=== Containers disponiveis para retirada: ");
-
-        // Loop para percorrer a lista
-        for (int i = 0; i < lista.size(); i++) {
-            Container containerAtual = lista.get(i);
-            System.out.println(i + " = " + containerAtual.getId());
-        }
-        System.out.println("\nDigite o NUMERO do container que irá sair: ");
-        int indiceSaida = entrada.nextInt();
-        entrada.nextLine();
-
-        if (indiceSaida >= 0 && indiceSaida < lista.size()) {
-            lista.remove(indiceSaida);
-
-            System.out.println("Container removido e saida registrada");
-        } else {
-            System.out.println("Numero Inválido! Retornando ao menu. ");
-        }
+        Util.registrarSaidaGenerica(lista, entrada, "Container");
+        Util.limpaTimer(1000); // Pausa e limpa
     }
 
     public void listarContainers() {

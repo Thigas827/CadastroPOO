@@ -74,9 +74,27 @@ public class Util {
     }
 
     // Metodo da interface (CONTRATO)
-    public static <T extends Indentificavel> void registrarSaidaGenerica(List<T> lista, Scanner entrada, String nomeEntidade) {
+    public static <T extends Indentificavel> void registrarSaidaGenerica(List<T> lista, Scanner entrada,
+            String nomeEntidade) {
         if (lista.isEmpty()) {
-            System.out.println("\n=== ")
+            System.out.println("\nNenhum " + nomeEntidade + "registrado.");
+            return;
+        }
+
+        System.out.println("\n=== " + nomeEntidade + "s disponiveis para saída ===");
+
+        for (int i = 0; i < lista.size(); i++) {
+            T itemAtual = lista.get(i);
+            System.out.println(i + " = " + itemAtual.getIdentificacaoParaTela());
+        }
+        System.out.println("\nDigite o NUMERO do " + nomeEntidade + " que irá sair: ");
+        int indiceSaida = entrada.nextInt();
+        entrada.nextLine();
+        if (indiceSaida >= 0 && indiceSaida < lista.size()) {
+            lista.remove(indiceSaida);
+            System.out.println(nomeEntidade + " removido e saida registrada com sucesso!");
+        } else {
+            System.out.println("Numero inválido! Retornando ao menu.");
         }
     }
 }
