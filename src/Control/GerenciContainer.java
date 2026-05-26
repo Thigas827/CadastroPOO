@@ -16,7 +16,7 @@ public class GerenciContainer {
     // Lista de container
     private List<Container> lista = new ArrayList<>();
 
-    // Metodo para regisrtrar a entrada do Container
+    // ============== Metodo para registrar a ENTRADA do Container ==============
     public void registrarEntradContainer(Scanner entrada, GerenciNavio gerenciN) {
 
         System.out.println("Digite o codigo de indentificação do Container: ");
@@ -64,7 +64,6 @@ public class GerenciContainer {
 
         System.out.println("Digite o destino do container ");
         String d = entrada.nextLine();
-        // ====================================================================================
 
         // Lista de navios para verificar navios disponives
         List<Navio> listaDeNaviosDisponiveis = gerenciN.getListaNavios();
@@ -98,11 +97,13 @@ public class GerenciContainer {
         Util.limpaTimer(500);
     }
 
+    // ============== Metodo para registrar a SAIDA do Container ==============
     public void registrarSaidaContainer(Scanner entrada, GerenciNavio gerenciN) {
         Util.registrarSaidaGenerica(lista, entrada, "Container");
         Util.limpaTimer(1000); // Pausa e limpa
     }
 
+    // ============== Metodo para LISTAR containers ==============
     public void listarContainers() {
         if (lista.isEmpty()) {
             System.out.println("\nNenhum container registrado no momento."); // Ajustado

@@ -17,7 +17,7 @@ public class GerenciNavio {
     // Lista de navios registrados
     private List<Navio> lista = new ArrayList<>();
 
-    // Metodo para regisrtrar a entrada do navio
+    // ============== Metodo para registrar a ENTRADA do Navio ==================
     public void registrarEntradNavio(Scanner entrada) {
         System.out.println("Nome do navio: ");
         String n = entrada.nextLine();
@@ -77,12 +77,13 @@ public class GerenciNavio {
         Util.limpaTimer(500);
     }
 
+    // ============== Metodo para registrar a SAIDA do container ==================
     public void registrarSaidaNavio(Scanner entrada) {
         Util.registrarSaidaGenerica(lista, entrada, "Navio");
         Util.limpaTimer(1000); // Pausa e limpa
     }
 
-    // Metodo para listar os navios
+    // ====================== Metodo para LISTAR os Navios ======================
     public void listarNavios() {
         if (lista.isEmpty()) {
             System.out.println("\nNenhum navio registrado.");
