@@ -3,7 +3,7 @@ package Model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Container {
+public class Container implements Indentificavel {
    private int id;
    private String tipoCont;
    private LocalDate dataEntrada;
@@ -86,4 +86,8 @@ public class Container {
             """.formatted(id, tipoCont, dataEntrada, horaEntrada, destino, navioOrigem.getNomeNavio());
    }
 
+   @Override
+   public String getIdentificacaoParaTela() {
+      return String.valueOf(this.id);
+   }
 }

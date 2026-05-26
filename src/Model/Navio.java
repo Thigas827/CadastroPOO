@@ -3,7 +3,7 @@ package Model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Navio {
+public class Navio implements Indentificavel {
     private String nomeNavio;
     private String tipoNavio;
     private LocalDate dataEntrada;
@@ -71,5 +71,10 @@ public class Navio {
                 Quantidade de Containers: %d
                 ================================""".formatted(nomeNavio, tipoNavio, dataEntrada, horaEntrada,
                 quantContain);
+    }
+
+    @Override
+    public String getIdentificacaoParaTela() {
+        return this.nomeNavio; // Indentidade do navio é o NOME dele
     }
 }

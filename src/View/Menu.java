@@ -51,14 +51,12 @@ public class Menu {
                     Util.limpaTimer(1000);
                     break;
                 case 5:
-                    Util.limpaTimer(50);
+                    Util.limpaTimer(200);
                     gerenciN.listarNavios();
-                    Util.limpaTimer(1000);
                     break;
                 case 6:
-                    Util.limpaTimer(50);
+                    Util.limpaTimer(200);
                     gerenciC.listarContainers();
-                    Util.limpaTimer(1000);
                     break;
                 case 7:
                     System.out.println("Saindo do programa...");

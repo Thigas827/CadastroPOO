@@ -16,3 +16,39 @@ Quantidade de Containers: 15
 ================================
 ================
 
+=== REGISTRO ===
+Nome: Thiago
+Tipo de carga: Carga geral
+Data de entrada: 2026-05-20
+Hora de entrada: 12:59
+Quantidade de Containers: 56
+================================
+================
+
+=== REGISTRO ===
+Nome: t
+Tipo de carga: Carga conteirizada
+Data de entrada: 1212-12-12
+Hora de entrada: 12:12
+Quantidade de Containers: 12
+================================
+================
+
+=== REGISTRO ===
+Nome: thiago
+Tipo de carga: Indefinido
+Data de entrada: 1212-12-12
+Hora de entrada: 12:12
+Quantidade de Containers: 12
+================================
+================
+
+=== REGISTRO ===
+Nome: t
+Tipo de carga: Granel sólido
+Data de entrada: 1212-12-12
+Hora de entrada: 12:12
+Quantidade de Containers: 12
+================================
+================
+

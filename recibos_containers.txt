@@ -9,3 +9,14 @@ Navio de origem: thiago
 
 ================
 
+=== REGISTRO ===
+Identificação: 23456
+Tipo de container: Graneleiro Dry
+Data de entrada: 2025-12-20
+Hora de entrada: 12:47
+Destino: Brasilia
+Navio de origem: Thiago
+-------------------------------
+
+================
+

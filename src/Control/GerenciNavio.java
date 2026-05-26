@@ -28,6 +28,7 @@ public class GerenciNavio {
         System.out.println("3. Granel sólido");
         System.out.println("4. Carga conteirizada");
 
+        boolean cargaValida = false;
         int opcao = entrada.nextInt();
         entrada.nextLine(); // Limpar buffer
 
@@ -36,15 +37,19 @@ public class GerenciNavio {
         switch (opcao) {
             case 1:
                 tipoCarga = "Carga geral";
+                cargaValida = true;
                 break;
             case 2:
                 tipoCarga = "Granel liquido";
+                cargaValida = true;
                 break;
             case 3:
                 tipoCarga = "Granel sólido";
+                cargaValida = true;
                 break;
             case 4:
                 tipoCarga = "Carga conteirizada";
+                cargaValida = true;
                 break;
             default:
                 System.out.println(

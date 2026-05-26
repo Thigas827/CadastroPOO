@@ -28,6 +28,7 @@ public class GerenciContainer {
         System.out.println("3. Graneleiro Dry");
         System.out.println("4. Open Top");
 
+        boolean cargaValida = false;
         int opcao = entrada.nextInt();
         entrada.nextLine(); // Limpar buffer
 
@@ -36,15 +37,19 @@ public class GerenciContainer {
         switch (opcao) {
             case 1:
                 tipoCont = "Dry box";
+                cargaValida = true;
                 break;
             case 2:
                 tipoCont = "High cube";
+                cargaValida = true;
                 break;
             case 3:
                 tipoCont = "Graneleiro Dry";
+                cargaValida = true;
                 break;
             case 4:
                 tipoCont = "Open Top";
+                cargaValida = true;
                 break;
             default:
                 System.out.println(

@@ -1,5 +1,7 @@
 package Utils;
 
+import java.util.List;
+import Model.Indentificavel;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -68,6 +70,13 @@ public class Util {
             gravador.println("================\n");
         } catch (IOException e) {
             System.out.println("Erro critico: Não foi possivel salvar o arquivo " + nomeArquivo);
+        }
+    }
+
+    // Metodo da interface (CONTRATO)
+    public static <T extends Indentificavel> void registrarSaidaGenerica(List<T> lista, Scanner entrada, String nomeEntidade) {
+        if (lista.isEmpty()) {
+            System.out.println("\n=== ")
         }
     }
 }
